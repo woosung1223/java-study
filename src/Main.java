@@ -1,9 +1,9 @@
-
 public class Main {
     public static void main(String[] args) {
 //        genericListPractice();
 //        genericTypePractice();
-        fruitPractice();
+//        fruitPractice();
+        juicePractice();
     }
 
     private static void genericListPractice() {
@@ -33,5 +33,13 @@ public class Main {
         appleTest.printBox();
 
 //        FruitBox<Integer> integerTest = new FruitBox<Integer>(); // ERROR. Fruit의 자손만 타입이 될 수 있다.
+    }
+
+    private static void juicePractice() {
+        FruitBox<Fruit.Grape> grapeTest = new FruitBox<>();
+        grapeTest.addFruit(new Fruit.Grape());
+        grapeTest.addFruit(new Fruit.Grape());
+
+        Juice.makeJuice(grapeTest);
     }
 }
