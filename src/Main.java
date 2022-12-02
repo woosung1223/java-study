@@ -1,5 +1,11 @@
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        GenericList<String> stringList = new GenericList<>();
+        stringList.pushElement("123");
+        stringList.pushElement("456");
+
+        System.out.println(stringList.popElement());
+        System.out.println(stringList.popElement());
     }
 }
