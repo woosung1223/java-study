@@ -1,10 +1,6 @@
+package generic;
+
 public class Fruit {
-    static class Apple extends Fruit {
-    }
-
-    static class Grape extends Fruit {
-    }
-
     @Override
     public String toString() {
         if (this instanceof Apple) {

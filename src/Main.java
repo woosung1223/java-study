@@ -1,3 +1,5 @@
+import generic.*;
+
 public class Main {
     public static void main(String[] args) {
 //        genericListPractice();
@@ -22,23 +24,23 @@ public class Main {
     }
 
     private static void fruitPractice() {
-        FruitBox<Fruit.Grape> grapeTest = new FruitBox<>();
-        grapeTest.addFruit(new Fruit.Grape());
-        grapeTest.addFruit(new Fruit.Grape());
+        FruitBox<Grape> grapeTest = new FruitBox<>();
+        grapeTest.addFruit(new Grape());
+        grapeTest.addFruit(new Grape());
         grapeTest.printBox();
 
-        FruitBox<Fruit.Apple> appleTest = new FruitBox<>();
-        appleTest.addFruit(new Fruit.Apple());
-        appleTest.addFruit(new Fruit.Apple());
+        FruitBox<Apple> appleTest = new FruitBox<>();
+        appleTest.addFruit(new Apple());
+        appleTest.addFruit(new Apple());
         appleTest.printBox();
 
-//        FruitBox<Integer> integerTest = new FruitBox<Integer>(); // ERROR. Fruit의 자손만 타입이 될 수 있다.
+//        generic.FruitBox<Integer> integerTest = new generic.FruitBox<Integer>(); // ERROR. Fruit의 자손만 타입이 될 수 있다.
     }
 
     private static void juicePractice() {
-        FruitBox<Fruit.Grape> grapeTest = new FruitBox<>();
-        grapeTest.addFruit(new Fruit.Grape());
-        grapeTest.addFruit(new Fruit.Grape());
+        FruitBox<Grape> grapeTest = new FruitBox<>();
+        grapeTest.addFruit(new Grape());
+        grapeTest.addFruit(new Grape());
 
         Juice.makeJuice(grapeTest);
     }

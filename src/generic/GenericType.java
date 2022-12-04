@@ -1,3 +1,5 @@
+package generic;
+
 public class GenericType<T> {
     private T data;
 
