@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Main {
@@ -7,33 +8,26 @@ public class Main {
     }
 
     public void start() {
-        Child child = new Child(1, 2);
+        Parent parent = new Parent();
+        parent.method();
 
-        child.add();
-        child.subtract();
+        Parent child = new Child();
+        child.method();
     }
-    
+
     public class Parent {
-        private int x, y;
 
-        public Parent(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        public void add() {
-            System.out.println(x + y);
-        }
-
-        public void subtract() {
-            System.out.println(x - y);
+        protected void method() throws IOException {
+            System.out.println("this is parent");
         }
     }
 
 
     public class Child extends Parent {
-        public Child(int x, int y) {
-            super(x, y);
+
+        @Override
+        public void method() throws Exception {
+            System.out.println("this is child");
         }
     }
 }
