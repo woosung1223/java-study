@@ -2,9 +2,6 @@ import Polymorphism.Person;
 import Polymorphism.Student;
 import Polymorphism.Teacher;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         Main test = new Main();
@@ -12,11 +9,21 @@ public class Main {
     }
 
     public void start() {
-        List<Person> group = new ArrayList<>();
+        Person student = new Student();
+        Person teacher = new Teacher();
 
-        group.add(new Student());
-        group.add(new Teacher());
+        Person person = (Person)student;
+        person.speak();
+        // I'm student
 
-        group.forEach(Person::speak);
+        Person person2 = (Person)teacher;
+        person2.speak();
+        //I'm Teacher
+
+        // 형변환은 '자료형이 바뀌는 것'이 아닌 '참조변수가 바뀌는 것'
+
+        Student student2 = (Student)teacher;
+        student2.speak();
+        // ERROR.
     }
 }
