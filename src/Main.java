@@ -1,5 +1,9 @@
-import java.io.IOException;
-import java.util.Arrays;
+import Polymorphism.Person;
+import Polymorphism.Student;
+import Polymorphism.Teacher;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,26 +12,11 @@ public class Main {
     }
 
     public void start() {
-        Parent parent = new Parent();
-        parent.method();
+        List<Person> group = new ArrayList<>();
 
-        Parent child = new Child();
-        child.method();
-    }
+        group.add(new Student());
+        group.add(new Teacher());
 
-    public class Parent {
-
-        protected void method() throws IOException {
-            System.out.println("this is parent");
-        }
-    }
-
-
-    public class Child extends Parent {
-
-        @Override
-        public void method() throws Exception {
-            System.out.println("this is child");
-        }
+        group.forEach(Person::speak);
     }
 }
