@@ -1,5 +1,5 @@
-import Polymorphism.Person;
-import Polymorphism.Student;
+import AbstractClass.Person;
+import AbstractClass.Student;
 import Polymorphism.Teacher;
 
 public class Main {
@@ -9,21 +9,12 @@ public class Main {
     }
 
     public void start() {
-        Person student = new Student();
-        Person teacher = new Teacher();
+        Person student = new Student(20);
+        student.printAge();
+        student.introduce();
 
-        Person person = (Person)student;
-        person.speak();
-        // I'm student
-
-        Person person2 = (Person)teacher;
-        person2.speak();
-        //I'm Teacher
-
-        // 형변환은 '자료형이 바뀌는 것'이 아닌 '참조변수가 바뀌는 것'
-
-        Student student2 = (Student)teacher;
-        student2.speak();
-        // ERROR.
+        // 추상 클래스는 구현체를 강제한다.
+        // 즉, 추상 클래스를 인스턴스로 선언할 수 없다.
+        // 단, 추상 클래스라고 해서 생성자, 멤버 변수, 추상 메서드가 아닌 메서드를 가질 수 없는 것은 아니다.
     }
 }
